@@ -1,20 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
-import Toggle from "./components/ToggleRenderProps";
+import Toggle from "./components/ToggleRenderPropsChildren";
 import "./styles.css";
 
 function App() {
   return (
     <div className="App">
-      <Toggle
-        render={(on, toggle) => (
-          <div>
+      <Toggle>
+        {({ on, toggle }) => (
+          <Fragment>
             <button onClick={toggle}>Show/Hide</button>
-            {on && <h2>Hello</h2>}
-          </div>
+            {on && <h2>Hello213231</h2>}
+          </Fragment>
         )}
-      />
+      </Toggle>
     </div>
   );
 }
