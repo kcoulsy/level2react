@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 
 import Toggle from "./components/ToggleRenderPropsChildren";
+import Portal from "./components/Portal";
 import "./styles.css";
 
 function App() {
@@ -11,7 +12,11 @@ function App() {
         {({ on, toggle }) => (
           <Fragment>
             <button onClick={toggle}>Show/Hide</button>
-            {on && <h2>Hello213231</h2>}
+            {on && (
+              <Portal>
+                <h2>Hello213231</h2>
+              </Portal>
+            )}
           </Fragment>
         )}
       </Toggle>
